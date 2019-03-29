@@ -59,3 +59,5 @@ set noshowmode " do not show indicator for insert, use lightline instead
 command! Wq wq " https://sanctum.geek.nz/arabesque/vim-koans/
 command! W w
 command! Q q
+command! Vsplit vsplit
+command! Split split
