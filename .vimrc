@@ -18,6 +18,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ap/vim-css-color'
 call plug#end()
 
 " Linters
