@@ -59,6 +59,7 @@ set undofile " maintain undo history between sessions.
 set noshowmode " do not show indicator for insert, use lightline instead
 set iskeyword-=_ " treat underscores as a word break in strings
 command! Wq wq " https://sanctum.geek.nz/arabesque/vim-koans/
+command! WQ wq
 command! W w
 command! Q q
 command! Vsplit vsplit
