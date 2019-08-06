@@ -57,6 +57,7 @@ set history=1000 " default is 20, I'd rather set this to ∞
 set undodir=~/.vim/undodir " dir for undo history.
 set undofile " maintain undo history between sessions.
 set noshowmode " do not show indicator for insert, use lightline instead
+set iskeyword-=_ " treat underscores as a word break in strings
 command! Wq wq " https://sanctum.geek.nz/arabesque/vim-koans/
 command! W w
 command! Q q
