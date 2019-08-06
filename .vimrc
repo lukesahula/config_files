@@ -55,7 +55,7 @@ set expandtab " use spaces instead of tabs
 set directory=~/.vim/swps
 set history=1000 " default is 20, I'd rather set this to ∞
 set undodir=~/.vim/undodir " dir for undo history.
-set undofile " naintain undo history between sessions.
+set undofile " maintain undo history between sessions.
 set noshowmode " do not show indicator for insert, use lightline instead
 command! Wq wq " https://sanctum.geek.nz/arabesque/vim-koans/
 command! W w
