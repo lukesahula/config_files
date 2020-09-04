@@ -1,4 +1,4 @@
-syntax on
+syntax enable
 colorscheme monokai
 
 " Plug download and setup
@@ -13,11 +13,12 @@ Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Valloric/YouCompleteMe'
-Plug 'pangloss/vim-javascript'
+Plug 'sheerun/vim-polyglot'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'vim-python/python-syntax'
+Plug 'leafgarland/typescript-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ap/vim-css-color'
 call plug#end()
@@ -37,6 +38,14 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
+" Move lines up and down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv~
+
 set encoding=utf-8 " always use utf-8
 set backupcopy=yes " do not use swaps and update directly files (hot reload)
 set clipboard=unnamedplus " set the os register for vim clipboard
@@ -50,8 +59,8 @@ let &colorcolumn="80,".join(range(100,999),",") " color max length breakpoints
 set tabstop=2 " spacing
 set softtabstop=2 
 set shiftwidth=2
+set expandtab "use spaces instead of tabs
 set numberwidth=4
-set expandtab " use spaces instead of tabs
 set directory=~/.vim/swps
 set history=1000 " default is 20, I'd rather set this to ∞
 set undodir=~/.vim/undodir " dir for undo history.
