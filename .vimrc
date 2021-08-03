@@ -12,19 +12,29 @@ call plug#begin('~/.vim/bundle')
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Valloric/YouCompleteMe'
-Plug 'sheerun/vim-polyglot'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'sheerun/vim-polyglot'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'elzr/vim-json'
-Plug 'jparise/vim-graphql'
-Plug 'vim-python/python-syntax'
+Plug 'udalov/kotlin-vim'
+" Plug 'jparise/vim-graphql'
+" Plug 'vim-python/python-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ap/vim-css-color'
 call plug#end()
 
+autocmd FileType scss setl iskeyword+=@-@
+
 " Linters
 let g:ale_linters = {'javascript': ['eslint']}
+
+" Coc keys
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " don't use arrowkeys
 noremap <Up> <NOP>
@@ -51,6 +61,7 @@ set backupcopy=yes " do not use swaps and update directly files (hot reload)
 set clipboard=unnamedplus " set the os register for vim clipboard
 set cursorline " highlight current line
 set number " show line numbers
+set relativenumber " show relative line numbers.
 set foldmethod=indent
 set foldnestmax=2 " maximum nested folds
 set nofoldenable " do not fold files when opening
@@ -67,9 +78,18 @@ set undodir=~/.vim/undodir " dir for undo history.
 set undofile " maintain undo history between sessions.
 set noshowmode " do not show indicator for insert, use lightline instead
 set iskeyword-=_ " treat underscores as a word break in strings
+let g:ycm_filepath_completion_use_working_dir = 1 " Support absolute path imports
 command! Wq wq " https://sanctum.geek.nz/arabesque/vim-koans/
 command! WQ wq
 command! W w
 command! Q q
 command! Vsplit vsplit
 command! Split split
+command! F GFiles
+command! FZ GFiles
+command! FZF GFiles
+command! FZFA Files
+command! FA Files
+
+hi! CocErrorFloat  ctermfg=blue guifg=#ff0000
+hi! CocWarningFloat  ctermfg=black guifg=#fab005
