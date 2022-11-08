@@ -1,2 +1,2 @@
 # config_files
-.vimrc and stuff
+.vimrc and ~~stuff~~
