@@ -54,9 +54,11 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
-inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <silent><expr><TAB> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <silent><expr><Down> coc#pum#visible() ? coc#pum#next(1) : "\<Down>"
 inoremap <silent><expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<cr>"
+inoremap <silent><expr><Up> coc#pum#visible() ? coc#pum#prev(1) : "\<Up>"
+inoremap <silent><expr><cr> pumvisible() ? coc#_select_confirm() : "\<cr>"
 
 " Move lines up and down
 nnoremap <A-j> :m .+1<CR>==
