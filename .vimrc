@@ -25,13 +25,14 @@ Plug 'udalov/kotlin-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ap/vim-css-color'
+Plug 'findango/vim-mdx'
 call plug#end()
 
 autocmd FileType scss setl iskeyword+=@-@
 
 " Linters
-let g:ale_linters = {'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier']}
-let g:ale_fixers = {'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier']}
+let g:ale_linters = {'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier'], 'javascriptreact': ['eslint', 'prettier'], 'typescriptreact': ['eslint', 'prettier']}
+let g:ale_fixers = {'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier'], 'javascriptreact': ['eslint', 'prettier'], 'typescriptreact': ['eslint', 'prettier']}
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
